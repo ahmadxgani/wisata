@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-panel-layout>
     <x-slot:title>
         Dashboard
     </x-slot>
@@ -32,4 +32,4 @@
             </div>
         </section>
     </div>
-</x-app-layout>
+</x-panel-layout>
