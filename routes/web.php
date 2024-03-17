@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
+    Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
     Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard');

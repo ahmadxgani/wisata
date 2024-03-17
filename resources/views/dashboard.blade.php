@@ -25,9 +25,13 @@
                     <h4 class="card-title">Default Layout</h4>
                 </div>
                 <div class="card-body">
+<p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, commodi? Ullam quaerat similique iusto
                     temporibus, vero aliquam praesentium, odit deserunt eaque nihil saepe hic deleniti? Placeat delectus
                     quibusdam ratione ullam!
+
+</p>
+<a href="{{ route('logout') }}" class="btn btn-primary">Logout</a>
                 </div>
             </div>
         </section>

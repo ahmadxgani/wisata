@@ -13,7 +13,7 @@ class LoginController extends Controller
     /**
      * Display login view
      */
-    public function create()
+    public function index()
     {
         return view('auth.login');
     }
@@ -42,8 +42,6 @@ class LoginController extends Controller
     public function destroy(Request $request) {
         Auth::guard('web')->logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
         return redirect('/');
     }
 }
