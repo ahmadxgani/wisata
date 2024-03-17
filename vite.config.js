@@ -25,8 +25,11 @@ export default defineConfig({
                 "resources/sass/app.scss",
                 "resources/sass/pages/auth.scss",
                 "resources/css/app.css",
+                "resources/leaflet/leaflet.css",
                 "resources/js/components/dark.js",
                 "resources/js/app.js",
+                "resources/js/map.js",
+                "resources/leaflet/leaflet.js",
                 "resources/js/initTheme.js"
             ],
             refresh: true,
