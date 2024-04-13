@@ -14,7 +14,7 @@
 <body>
     @vite('resources/js/initTheme.js')
      <div class="container">
-        <div class="p-3 mb-1 bg-body-tertiary rounded-3">
+        <div class="p-3 mb-4 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
                 <div class="row justify-content-between">
                     <div class="col-md-9 fs-4">
@@ -29,6 +29,31 @@
                 </div>
             </div>
         </div>
+        @php
+        $mock = array("Be god", "Be single minded", "Be light yagami", "Be Asta", "Be yourself", "Who is yourself?", "I'm is yourself", "Or perhaps universe");
+        $mock = array_chunk($mock, 3)
+        @endphp
+        @foreach($mock as $arr)
+        <div class="row">
+            @foreach($arr as $str)
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="assets/static/images/samples/motorcycle.jpg" class="card-img-top img-fluid"
+                                alt="singleminded">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $str }}</h5>
+                                <p class="card-text">
+                                    Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.Gummies
+                                    bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        @endforeach
         <div id="map" class="mt-5" style="height: 280px;"></div>
     </div>
 
