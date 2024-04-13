@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    return view('landing');
+    return view('home');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
