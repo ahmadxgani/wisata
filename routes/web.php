@@ -23,10 +23,10 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard');
-    Route::group(['prefix' => 'component', 'as' => 'component.'], function() {
-        Route::get('accordion', function() {
-            return view('mazer.components.accordion');
-        })->name('accordion');
+    Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
+        Route::get('profile', function() {
+            return view('profile');
+        })->name('profile');
     });
 });
 
