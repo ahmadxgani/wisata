@@ -20,7 +20,7 @@
                     <div class="col-md-9 fs-4">
                 <h1 class="display-5 fw-bold">Selamat datang di wisata Jepang</h1>
                         <p>Jelajahi Keindahan Alam dan Budaya di Berbagai Destinasi bersama waifu mu</p>
-                        <a class="btn btn-lg btn-primary" href="{{ route('auth.register.index') }}">Jelajahi sekarang!</a>
+                        <button class="btn btn-lg btn-primary">Jelajahi sekarang!</button>
                     </div>
 
                     <div class="col d-flex flex-column">
@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+        <div id="map" class="mb-4" style="height: 280px;"></div>
         @php
         $mock = array("Be god", "Be single minded", "Be light yagami", "Be Asta", "Be yourself", "Who is yourself?", "I'm is yourself", "Or perhaps universe");
         $mock = array_chunk($mock, 3)
@@ -57,7 +58,6 @@
             @endforeach
         </div>
         @endforeach
-        <div id="map" class="mt-5" style="height: 280px;"></div>
     </div>
 
     @vite(['resources/js/app.js', 'resources/js/components/dark.js', 'resources/leaflet/leaflet.js', 'resources/js/map.js'])
