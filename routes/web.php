@@ -29,5 +29,8 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         })->name('profile');
     });
 });
+Route::get('destinasi/salabintana', function() {
+    return view('detail');
+})->name('detail');
 
 require_once __DIR__ . "/auth.php";
