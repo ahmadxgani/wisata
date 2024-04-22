@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('photo_path');
             $table->string('description');
+            $table->foreign('category_id')->reference('id')->on('categories');
             $table->string('link');
             $table->timestamps();
         });
