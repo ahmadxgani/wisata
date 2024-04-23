@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Support\Facades\DB;
+use App\Models\Destinations;
 use Illuminate\Database\Seeder;
 
 class DestinationSeeder extends Seeder
@@ -13,7 +13,7 @@ class DestinationSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('destinations')->insert([
+        Destination::create([
             'name' => 'Gunung Gede',
             'description' => 'wisata muncak gunung gede',
             'address' => 'lorem ipsum dolor sit amet',
