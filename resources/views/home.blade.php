@@ -48,7 +48,10 @@
                                     Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.Gummies
                                     bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.
                                 </p>
-                                <div class="d-flex justify-content-end">
+                                <div class="d-flex justify-content-between">
+                                    <p>
+                                        <small class="text-body-success"><span class="badge text-bg-success">category</span></small>
+                                    </p>
                                     <button class="btn btn-primary block ">Detail</button>
                                 </div>
                             </div>

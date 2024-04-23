@@ -32,22 +32,6 @@
             </div>
         </div>
     </div>
-    
-     <!-- <div class="container">
-        <div class="p-3 mb-4 bg-body-tertiary rounded-3">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-9 fs-4">
-                        <img src="{{ asset('assets/static/images/samples/motorcycle.jpg') }}" class="card-img-top img-fluid" alt="nama wisata">
-                        <h1 class="display-5 fw-bold">nama wisata <span class="badge text-bg-secondary">kategori</span></h1>
-                        <p>deskripsi wisata, Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur excepturi odit totam, minima quae ex officia quidem quo nesciunt quibusdam, officiis eum. Reiciendis fugiat amet sunt quisquam molestias, aperiam ab.</p>
-                        <p>alamat: jl salabintana sukabumi</p>
-                        <a href="#">link ke google maps</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     @vite(['resources/js/app.js', 'resources/js/components/dark.js'])
 </body>
