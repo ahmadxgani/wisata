@@ -18,22 +18,23 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('destinasi/salabintana', function() {
+    return view('destinasi.detail');
+})->name('detail');
+
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
     Route::get('dashboard', function() {
-        return view('dashboard');
+        return view('user.dashboard');
     })->name('dashboard');
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
         Route::get('profile', function() {
-            return view('profile');
+            return view('user.profile');
         })->name('profile');
     });
     Route::get('destinasi/new', function() {
-        return view('create');
+        return view('destinasi.create');
     });
 });
-Route::get('destinasi/salabintana', function() {
-    return view('detail');
-})->name('detail');
 
 require_once __DIR__ . "/auth.php";
