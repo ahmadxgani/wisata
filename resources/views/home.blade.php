@@ -20,7 +20,7 @@
                     <div class="col-md-9 fs-4">
                 <h1 class="display-5 fw-bold">Selamat datang di wisata Jepang</h1>
                         <p>Jelajahi Keindahan Alam dan Budaya di Berbagai Destinasi bersama waifu mu</p>
-                        <button class="btn btn-lg btn-primary">Jelajahi sekarang!</button>
+                        <a href="#destinations" class="btn btn-lg btn-primary">Jelajahi sekarang!</a>
                     </div>
 
                     <div class="col d-flex flex-column">
@@ -30,10 +30,14 @@
             </div>
         </div>
         <div id="map" class="mb-4" style="height: 280px;"></div>
+        
+        <hr id="destinations">
+
         @php
         $mock = array("Be god", "Be single minded", "Be light yagami", "Be Asta", "Be yourself", "Who is yourself?", "I'm is yourself", "Or perhaps universe");
         $mock = array_chunk($mock, 3)
         @endphp
+
         @foreach($mock as $arr)
         <div class="row">
             @foreach($arr as $str)
