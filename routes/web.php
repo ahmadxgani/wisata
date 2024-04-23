@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DestinationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,7 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
             return view('user.profile');
         })->name('profile');
     });
-    Route::get('destinasi/new', function() {
-        return view('destinasi.create');
-    });
+    Route::get('destinasi/new', [DestinationController::class, 'create'])->name('new_destination');
 });
 
 require_once __DIR__ . "/auth.php";

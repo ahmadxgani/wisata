@@ -12,7 +12,7 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        //
+        return view('destinasi.create');
     }
 
     /**

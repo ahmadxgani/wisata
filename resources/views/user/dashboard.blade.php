@@ -10,12 +10,7 @@
                     <p class="text-subtitle text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
-                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Layout Default</li>
-                        </ol>
-                    </nav>
+                    <a href="{{ route('new_destination') }}" class="float-start float-lg-end btn btn-primary">Tambahkan destinasi</a>
                 </div>
             </div>
         </div>
