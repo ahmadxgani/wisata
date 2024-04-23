@@ -28,6 +28,9 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
             return view('profile');
         })->name('profile');
     });
+    Route::get('destinasi/new', function() {
+        return view('create');
+    });
 });
 Route::get('destinasi/salabintana', function() {
     return view('detail');
