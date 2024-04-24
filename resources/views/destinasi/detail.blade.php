@@ -18,7 +18,7 @@
         <div class="card mt-4" style="max-width: 100%;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="{{ asset('assets/static/images/samples/motorcycle.jpg') }}" class="img-fluid rounded-start" style="height: 100%;object-fit: cover;" alt="...">
+                    <img src="{{ asset('storage/image/' . $destination->photo_path) }}" class="img-fluid rounded-start" style="height: 100%;object-fit: cover;" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
