@@ -27,56 +27,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-bold-500">Michael Right</td>
-                                    <td>Sukabumi</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Delete</a>
-                                    </td>
+                                @foreach($destinations as $destination)
+                                    <tr>
+                                        <td class="text-bold-500">{{ $destination->name }}</td>
+                                        <td>{{ $destination->address }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-primary">Detail</a>
+                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                            <a href="#" class="btn btn-sm btn-primary">Delete</a>
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                    <td>Sukabumi</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Delete</a>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-bold-500">Tiffani Blogz</td>
-                                    <td>Sukabumi</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Delete</a>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-bold-500">Ashley Boul</td>
-                                    <td>Sukabumi</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Delete</a>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-bold-500">Mikkey Mice</td>
-                                    <td>Sukabumi</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-primary">Delete</a>
-                                    </td>
-
-                                </tr>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

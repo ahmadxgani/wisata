@@ -25,9 +25,7 @@ Route::get('destinasi/salabintana', function() {
 
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
-    Route::get('dashboard', function() {
-        return view('user.dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [DestinationController::class, 'index'])->name('dashboard');
     Route::post('destinasi/new', [DestinationController::class, 'store']);
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
         Route::get('profile', function() {

@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class DestinationController extends Controller
 {
     /**
+     * Display dashboard view
+     */
+    public function index()
+    {
+        $destinations = Destination::all();
+        return view('user.dashboard', compact('destinations'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
