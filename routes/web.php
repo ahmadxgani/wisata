@@ -22,22 +22,26 @@ Route::get('/', function () {
     return view('home', compact('destinations'));
 });
 
-Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
+    Route::get('/', [DestinationController::class, 'index'])->name('dashboard');
+    Route::group(['prefix' => 'destinasi', 'as' => 'destinasi.'], function () {
+        Route::get('{destination}/edit', [DestinationController::class, 'edit'])->name('edit');
+        Route::put('{destination}/edit', [DestinationController::class, 'update']);
+        Route::delete('{destination}', [DestinationController::class, 'destroy'])->name('delete');
+        Route::post('create', [DestinationController::class, 'store']);
+        Route::get('create', [DestinationController::class, 'create'])->name('create');
+    });
+
     Route::get('categories', [CategoryController::class, 'index'])->name('category');
-    Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
-    Route::get('dashboard', [DestinationController::class, 'index'])->name('dashboard');
-    Route::get('dashboard/{destination}', [DestinationController::class, 'edit'])->name('edit');
-    Route::put('dashboard/{destination}', [DestinationController::class, 'update']);
-    Route::delete('dashboard/{destination}', [DestinationController::class, 'destroy']);
-    Route::post('destinasi/new', [DestinationController::class, 'store']);
+
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
+        Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
         Route::get('profile', function() {
-            return view('user.profile');
+            return view('dashboard.user.profile');
         })->name('profile');
     });
-    Route::get('destinasi/new', [DestinationController::class, 'create'])->name('new_destination');
 });
 
-Route::get('destinasi/{destination}', [DestinationController::class, 'show'])->name('detail');
+Route::get('destinasi/{destination}', [DestinationController::class, 'show']);
 
 require_once __DIR__ . "/auth.php";

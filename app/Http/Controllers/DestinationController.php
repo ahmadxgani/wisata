@@ -13,7 +13,7 @@ class DestinationController extends Controller
     public function index()
     {
         $destinations = Destination::all();
-        return view('user.dashboard', compact('destinations'));
+        return view('dashboard.destinasi.index', compact('destinations'));
     }
 
     /**
@@ -21,7 +21,7 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        return view('destinasi.create');
+        return view('dashboard.destinasi.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class DestinationController extends Controller
      */
     public function edit(Destination $destination)
     {
-        return view('destinasi.edit', compact('destination'));
+        return view('dashboard.destinasi.edit', compact('destination'));
     }
 
     /**

@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('user.category', compact('categories'));
+        return view('dashboard.category.index', compact('categories'));
     }
 
     /**

@@ -1,4 +1,5 @@
 ## Destinasi Wisata | Ujikom :"
+Menyediakan rekomendasi tempat wisata di suatu wilayah.
 
 ### Default admin account
 username: admin
