@@ -32,7 +32,7 @@
                                         <td class="text-bold-500">{{ $destination->name }}</td>
                                         <td>{{ $destination->address }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Detail</a>
+                                            <a href="/destinasi/{{ $destination->name }}" class="btn btn-sm btn-primary">Detail</a>
                                             <a href="#" class="btn btn-sm btn-primary">Edit</a>
                                             <form action="/dashboard/{{ $destination->id }}" method="post" style="display: inline;">
                                                 @csrf
