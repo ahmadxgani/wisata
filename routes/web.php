@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('destinasi/salabintana', function() {
-    return view('destinasi.detail');
-})->name('detail');
+Route::get('destinasi/{destination}', [DestinationController::class, 'show'])->name('detail');
 
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');

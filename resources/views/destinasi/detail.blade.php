@@ -22,11 +22,11 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">nama wisata</h5>
-                        <p class="card-text">Deskripsi wisata, This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text">Alamat jl salabintana sukabumi</p>
-                        <a href="#" class="btn btn-primary"><i class="bi bi-map-fill"></i> Open Maps</a>
-                        <p class="card-text"><small class="text-body-secondary"><span class="badge text-bg-secondary">category</span></small></p>
+                        <h5 class="card-title">{{ $destination->name }}</h5>
+                        <p class="card-text">{{ $destination->description }}</p>
+                        <p class="card-text">{{ $destination->address }}</p>
+                        <a href="{{ $destination->link }}" class="btn btn-primary"><i class="bi bi-map-fill"></i> Open Maps</a>
+                        <p class="card-text"><small class="text-body-secondary"><span class="badge text-bg-secondary">{{ $destination->category->name }}</span></small></p>
                     </div>
                 </div>
             </div>

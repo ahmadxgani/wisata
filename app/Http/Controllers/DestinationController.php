@@ -56,9 +56,11 @@ class DestinationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Destination $destination)
+    public function show($name)
     {
-        return view('detail');
+        $destination = Destination::where('name', $name)->first();
+        if (!$destination) abort(404);
+        return view('destinasi.detail', compact('destination'));
     }
 
     /**
