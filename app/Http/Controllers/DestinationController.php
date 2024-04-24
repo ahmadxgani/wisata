@@ -68,7 +68,7 @@ class DestinationController extends Controller
      */
     public function edit(Destination $destination)
     {
-        //
+        return view('destinasi.edit', compact('destination'));
     }
 
     /**
@@ -76,7 +76,15 @@ class DestinationController extends Controller
      */
     public function update(Request $request, Destination $destination)
     {
-        //
+        $request->validate([
+            'description' => 'string',
+            'name' => 'string',
+            'link' => 'string',
+            'address' => 'string',
+            'upload_photo' => 'image'
+        ]);
+        $destination->update($request->all());
+        return redirect()->route('dashboard');
     }
 
     /**

@@ -33,7 +33,7 @@
                                         <td>{{ $destination->address }}</td>
                                         <td>
                                             <a href="/destinasi/{{ $destination->name }}" class="btn btn-sm btn-primary">Detail</a>
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                            <a href="{{ route('edit', $destination->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                             <form action="/dashboard/{{ $destination->id }}" method="post" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')

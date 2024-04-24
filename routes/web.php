@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
     Route::get('dashboard', [DestinationController::class, 'index'])->name('dashboard');
+    Route::get('dashboard/{destination}', [DestinationController::class, 'edit'])->name('edit');
+    Route::put('dashboard/{destination}', [DestinationController::class, 'update']);
     Route::delete('dashboard/{destination}', [DestinationController::class, 'destroy']);
     Route::post('destinasi/new', [DestinationController::class, 'store']);
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
