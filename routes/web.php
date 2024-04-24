@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DestinationController;
 
 /*
@@ -43,9 +44,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
 
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
         Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
-        Route::get('profile', function() {
-            return view('dashboard.user.profile');
-        })->name('profile');
+        Route::get('profile', [UserController::class, 'index'])->name('profile');
+        Route::put('updateUsername', [UserController::class, 'updateUsername'])->name('rename');
+        Route::put('resetPassword', [UserController::class, 'updatePassword'])->name('resetPassword');
     });
 });
 
