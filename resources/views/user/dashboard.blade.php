@@ -34,7 +34,11 @@
                                         <td>
                                             <a href="#" class="btn btn-sm btn-primary">Detail</a>
                                             <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-primary">Delete</a>
+                                            <form action="/dashboard/{{ $destination->id }}" method="post" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
                                         </td>
 
                                     </tr>
