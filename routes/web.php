@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
 
 /*
@@ -22,6 +23,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
+    Route::get('categories', [CategoryController::class, 'index'])->name('category');
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
     Route::get('dashboard', [DestinationController::class, 'index'])->name('dashboard');
     Route::get('dashboard/{destination}', [DestinationController::class, 'edit'])->name('edit');
