@@ -16,7 +16,9 @@ use App\Http\Controllers\DestinationController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $destinations = \App\Models\Destination::all();
+    
+    return view('home', compact('destinations'));
 });
 
 Route::get('destinasi/{destination}', [DestinationController::class, 'show'])->name('detail');

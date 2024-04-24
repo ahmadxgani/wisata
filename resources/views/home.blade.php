@@ -33,28 +33,21 @@
         
         <hr id="destinations">
 
-        @php
-        $mock = array("Be god", "Be single minded", "Be light yagami", "Be Asta", "Be yourself", "Who is yourself?", "I'm is yourself", "Or perhaps universe");
-        $mock = array_chunk($mock, 3)
-        @endphp
-
-        @foreach($mock as $arr)
         <div class="row">
-            @foreach($arr as $str)
+            @foreach($destinations as $arr)
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-content">
                             <img src="assets/static/images/samples/motorcycle.jpg" class="card-img-top img-fluid"
                                 alt="singleminded">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $str }}</h5>
+                                <h5 class="card-title">{{ $arr->name }}</h5>
                                 <p class="card-text">
-                                    Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.Gummies
-                                    bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.
+                                    {{ $arr->description }}
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <p>
-                                        <small class="text-body-success"><span class="badge text-bg-success">category</span></small>
+                                        <small class="text-body-success"><span class="badge text-bg-success">{{ $arr->category->name }}</span></small>
                                     </p>
                                     <button class="btn btn-primary btn-sm">Lihat lebih detail</button>
                                 </div>
@@ -64,7 +57,6 @@
                 </div>
             @endforeach
         </div>
-        @endforeach
     </div>
 
     @vite(['resources/js/app.js', 'resources/js/components/dark.js', 'resources/leaflet/leaflet.js', 'resources/js/map.js'])
