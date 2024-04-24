@@ -21,8 +21,6 @@ Route::get('/', function () {
     return view('home', compact('destinations'));
 });
 
-Route::get('destinasi/{destination}', [DestinationController::class, 'show'])->name('detail');
-
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
     Route::get('dashboard', [DestinationController::class, 'index'])->name('dashboard');
@@ -35,5 +33,7 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     });
     Route::get('destinasi/new', [DestinationController::class, 'create'])->name('new_destination');
 });
+
+Route::get('destinasi/{destination}', [DestinationController::class, 'show'])->name('detail');
 
 require_once __DIR__ . "/auth.php";
