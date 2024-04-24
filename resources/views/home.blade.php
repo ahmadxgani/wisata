@@ -49,7 +49,7 @@
                                     <p>
                                         <small class="text-body-success"><span class="badge text-bg-success">{{ $arr->category->name }}</span></small>
                                     </p>
-                                    <button class="btn btn-primary btn-sm">Lihat lebih detail</button>
+                                    <a href="/destinasi/{{ $arr->name }}" class="btn btn-primary btn-sm">Lihat lebih detail</a>
                                 </div>
                             </div>
                         </div>
