@@ -18,7 +18,8 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                <form class="form form-horizontal">
+                                <form method="POST" class="form form-horizontal" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-12">
@@ -29,7 +30,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input type="text" class="form-control" id="name">
+                                                                <input required type="text" class="form-control" name="name" id="name">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -43,7 +44,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input type="file" class="form-control" id="upload_photo">
+                                                                <input required type="file" class="form-control" name="upload_photo" id="upload_photo">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -57,7 +58,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input type="text" class="form-control" id="address">
+                                                                <input required type="text" class="form-control" name="address" id="address">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -71,7 +72,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input type="url" class="form-control" id="link">
+                                                                <input required type="url" class="form-control" name="link" id="link">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -84,7 +85,7 @@
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-group">
-                                                            <textarea class="form-control" id="description"></textarea>
+                                                            <textarea required class="form-control" name="description" id="description"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -96,11 +97,11 @@
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-group">
-                                                            <select class="form-select">
-                                                                <option selected>Pilih kategori</option>
-                                                                <option value="pegunungan">pegunungan</option>
-                                                                <option value="pantai">pantai</option>
-                                                                <option value="curug">curug</option>
+                                                            <select required name="category_id" class="form-select">
+                                                                <option selected value="">Pilih kategori</option>
+                                                                @foreach (\App\Models\Category::all() as $key => $item)
+                                                                    <option value="{{ $key+1 }}">{{ $item->name }}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>

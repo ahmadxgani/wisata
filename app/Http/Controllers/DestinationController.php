@@ -20,7 +20,28 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'description' => 'required|string',
+            'name' => 'required|string',
+            'category_id' => 'required',
+            'link' => 'required|string',
+            'address' => 'required|string',
+            'upload_photo' => 'required|image'
+        ]);
+     
+        $fileName = time() . '.' . $request->upload_photo->extension();
+        $request->upload_photo->storeAS('public/image', $fileName);
+
+        $dest = new Destination;
+        $dest->name = $request->input('name');
+        $dest->link = $request->input('link');
+        $dest->address = $request->input('address');
+        $dest->category_id = $request->input('category_id');
+        $dest->description = $request->input('description');
+        $dest->photo_path = $fileName;
+        $dest->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**

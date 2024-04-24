@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     Route::get('dashboard', function() {
         return view('user.dashboard');
     })->name('dashboard');
+    Route::post('destinasi/new', [DestinationController::class, 'store']);
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
         Route::get('profile', function() {
             return view('user.profile');
