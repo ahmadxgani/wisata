@@ -32,7 +32,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
         Route::get('create', [DestinationController::class, 'create'])->name('create');
     });
 
-    Route::get('categories', [CategoryController::class, 'index'])->name('category');
+    Route::group(['prefix' => 'kategori', 'as' => 'kategori.'], function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('edit');
+        Route::put('{category}/edit', [CategoryController::class, 'update']);
+        Route::delete('{category}', [CategoryController::class, 'destroy'])->name('delete');
+        Route::post('create', [CategoryController::class, 'store']);
+        Route::get('create', [CategoryController::class, 'create'])->name('create');
+    });
 
     Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
         Route::get('logout', [LoginController::class, 'destroy'])->name('logout');

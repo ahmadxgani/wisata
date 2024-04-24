@@ -10,7 +10,7 @@
                     <p class="text-subtitle text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
-                    <a href="#" class="float-start float-lg-end btn btn-primary">Tambahkan kategori</a>
+                    <a href="{{ route('kategori.create') }}" class="float-start float-lg-end btn btn-primary">Tambahkan kategori</a>
                 </div>
             </div>
         </div>
@@ -30,8 +30,8 @@
                                     <tr>
                                         <td class="text-bold-500">{{ $category->name }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <form action="/dashboard/{{ $category->id }}" method="post" style="display: inline;">
+                                            <a href="{{ route('kategori.edit', $category->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                            <form action="{{ route('kategori.delete', $category->id) }}" method="post" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</button>
