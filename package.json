@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build && npm run prettify",
+        "build": "vite build",
         "watch": "vite build --watch",
         "prod-rtl": "npm run build && rtl",
         "rtl": "rtlcss -d \"dist/assets/compiled/css\" -e \".rtl.css\" && find . -type f -name '*.rtl.rtl.css' -delete",
