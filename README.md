@@ -41,6 +41,8 @@ combine private and pub: `cat privkey.pem fullchain.pem > localhost.crt`
 
 and then install the cert to the system as root certificate. on linux system you can use `trust --verbose anchor --store localhost.crt`.
 
+sometimes you need to refresh the certificate list, restart apache server or even exit the chrome if it didn't work after you add more or change the domain on `subjectAltName`.
+
 to verify, `trust list` and search for label `localhost`
 
 ### Links
