@@ -21,7 +21,7 @@ Route::get('/', function () {
     $destinations = \App\Models\Destination::all();
     
     return view('home', compact('destinations'));
-});
+})->name('home');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('/', [DestinationController::class, 'index'])->name('dashboard');
@@ -50,6 +50,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
     });
 });
 
-Route::get('destinasi/{destination}', [DestinationController::class, 'show']);
+Route::get('destinasi/{destination}', [DestinationController::class, 'show'])->name('destinasi.detail');
 
 require_once __DIR__ . "/auth.php";
