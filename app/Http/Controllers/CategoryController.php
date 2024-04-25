@@ -30,14 +30,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
+            'name' => 'required|unique:categories|string',
         ]);
      
         $dest = new Category;
         $dest->name = $request->input('name');
         $dest->save();
 
-        return redirect()->route('kategori.index');
+        return redirect()->route('kategori.index')->with('status', 'Category successfuly created');
     }
 
     /**
@@ -54,10 +54,10 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate([
-            'name' => 'string',
+            'name' => 'string|unique:categories,name,'.$category->id,
         ]);
         $category->update($request->all());
-        return redirect()->route('kategori.index');
+        return redirect()->route('kategori.index')->with('status', 'Category successfuly updated');
     }
 
     /**
@@ -66,6 +66,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('kategori.index');
+        return redirect()->route('kategori.index')->with('status', 'Category successfuly deleted');;
     }
 }

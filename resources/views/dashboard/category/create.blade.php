@@ -30,7 +30,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input required type="text" class="form-control" name="name" id="name">
+                                                                <input value="{{ old('name') }}" required type="text" class="form-control" name="name" id="name">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -54,3 +54,18 @@
         </section>
     </div>
 </x-panel-layout>
+
+@error('name')
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <span class="btn btn-primary btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
+        <strong class="me-auto">New notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        {{ $message }}
+      </div>
+    </div>
+</div>
+@enderror
