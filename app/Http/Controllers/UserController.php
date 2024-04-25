@@ -23,9 +23,11 @@ class UserController extends Controller
      */
     public function updateUsername(Request $request)
     {
-        $request->validate([ 'username' => 'string', 'name' ]);
-        Auth::user()->update($request->all());
-        return redirect()->route('account.profile');
+        $request->validate([ 'username' => 'string', 'name', 'name' => 'string' ]);
+        $user = Auth::user();
+        $user->update($request->all());
+    
+        return redirect()->route('account.profile')->with('status', 'username successfuly updated');
     }
 
     public function updatePassword(Request $request)
@@ -35,21 +37,19 @@ class UserController extends Controller
             'confirm-password' => 'string|required',
             'new-password' => 'string|required'
         ]);
-        if (!Hash::check($request->input('password'), Auth::user()->password)) {
-            dd('password not match');
-            return redirect()->route('account.profile');    
+        $user = Auth::user();
+        
+        if (!Hash::check($request->input('password'), $user->password)) {
+            return redirect()->route('account.profile')->with('status', 'ERROR: wrong password');
         } else if (strcmp($request->input('password'), $request->input('new-password')) == 0) {
-            dd('prev password are same with new one');
-            return redirect()->route('account.profile');
+            return redirect()->route('account.profile')->with('status', 'ERROR: previous password are same with new one');
         } else if (strcmp($request->input('confirm-password'), $request->input('new-password')) != 0) {
-            dd('new and confirm password not same');
-            return redirect()->route('account.profile');
+            return redirect()->route('account.profile')->with('status', 'ERROR: new and confirm password are not same');
         }
 
-        $user = Auth::user();
         $user->password = bcrypt($request->input('new-password'));
         $user->save();
 
-        return redirect()->route('account.profile');
+        return redirect()->route('account.profile')->with('status', 'password successfuly updated');
     }
 }
