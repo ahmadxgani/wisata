@@ -51,3 +51,18 @@
         </section>
     </div>
 </x-panel-layout>
+
+@if (session('status'))
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <span class="btn btn-primary btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
+        <strong class="me-auto">New notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        {{ session('status') }}
+      </div>
+    </div>
+</div>
+@endif

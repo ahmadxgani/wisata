@@ -31,7 +31,7 @@ class DestinationController extends Controller
     {
         $request->validate([
             'description' => 'required|string',
-            'name' => 'required|string',
+            'name' => 'required|string|unique:destinations',
             'category_id' => 'required',
             'link' => 'required|string',
             'address' => 'required|string',
@@ -50,7 +50,7 @@ class DestinationController extends Controller
         $dest->photo_path = $fileName;
         $dest->save();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('status', 'Destination successfuly created');
     }
 
     /**
@@ -78,13 +78,13 @@ class DestinationController extends Controller
     {
         $request->validate([
             'description' => 'string',
-            'name' => 'string',
+            'name' => 'string||unique:destinations,name,'.$destination->id,
             'link' => 'string',
             'address' => 'string',
             'upload_photo' => 'image'
         ]);
         $destination->update($request->all());
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('status', 'Destination successfuly created');
     }
 
     /**
@@ -93,6 +93,6 @@ class DestinationController extends Controller
     public function destroy(Destination $destination)
     {
         $destination->delete();
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('status', 'Destination successfuly created');
     }
 }

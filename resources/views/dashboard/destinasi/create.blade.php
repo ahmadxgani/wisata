@@ -30,7 +30,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input required type="text" class="form-control" name="name" id="name">
+                                                                <input value="{{ old('name') }}" required type="text" class="form-control" name="name" id="name">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -58,7 +58,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input required type="text" class="form-control" name="address" id="address">
+                                                                <input value="{{ old('address') }}" required type="text" class="form-control" name="address" id="address">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -72,7 +72,7 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <div class="position-relative">
-                                                                <input required type="url" class="form-control" name="link" id="link">
+                                                                <input value="{{ old('link') }}" required type="url" class="form-control" name="link" id="link">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -85,7 +85,7 @@
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-group">
-                                                            <textarea required class="form-control" name="description" id="description"></textarea>
+                                                            <textarea required class="form-control" name="description" id="description">{{ old('description') }}</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -98,9 +98,11 @@
                                                     <div class="col-8">
                                                         <div class="form-group">
                                                             <select required name="category_id" class="form-select">
-                                                                <option selected value="">Pilih kategori</option>
+                                                                <option value="">Pilih kategori</option>
                                                                 @foreach (\App\Models\Category::all() as $key => $item)
-                                                                    <option value="{{ $key+1 }}">{{ $item->name }}</option>
+                                                                    <option 
+                                                                    <?= $item->id == old('category_id') ? ' selected' : ''; ?>
+                                                                    value="{{ $item->id }}">{{ $item->name }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
@@ -125,3 +127,20 @@
         </section>
     </div>
 </x-panel-layout>
+
+@if ($errors->any())
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    @foreach ($errors->all() as $error)
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <span class="btn btn-primary btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
+            <strong class="me-auto">New notification</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{ $error }}
+        </div>
+        </div>
+    @endforeach
+</div>
+@endif
