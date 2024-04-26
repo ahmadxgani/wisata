@@ -25,8 +25,8 @@
                         <h5 class="card-title">{{ $destination->name }}</h5>
                         <p class="card-text">{{ $destination->description }}</p>
                         <p class="card-text">{{ $destination->address }}</p>
-                        <a href="{{ $destination->link }}" class="btn btn-primary"><i class="bi bi-map-fill"></i> Open Maps</a>
-                        <p class="card-text"><small class="text-body-secondary"><span class="badge text-bg-secondary">{{ $destination->category->name }}</span></small></p>
+                        <a href="{{ $destination->link }}" class="btn btn-primary btn-sm"><i class="bi bi-map-fill"></i> Open Maps</a>
+                        <p class="card-text"><small class="text-body-success"><span class="badge text-bg-success">{{ $destination->category->name }}</span></small></p>
                     </div>
                 </div>
             </div>
