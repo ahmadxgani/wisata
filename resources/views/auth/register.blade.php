@@ -61,7 +61,7 @@
                             <i class="bi bi-shield-lock"></i>
                         </div>
                     </div>
-                    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Sign Up</button>
+                    <button class="btn btn-info fw-semibold btn-block btn-lg shadow-lg mt-5">Sign Up</button>
                 </form>
                 <div class="text-center mt-5 text-lg fs-4">
                     <p class='text-gray-600'>Already have an account? <a href="{{ route('auth.login.index') }}" class="font-bold">Log

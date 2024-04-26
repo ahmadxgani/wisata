@@ -9,7 +9,7 @@
                     <h3>Kelola Kategori</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
-                    <a href="{{ route('kategori.create') }}" class="float-start float-lg-end btn btn-primary">Tambahkan kategori</a>
+                    <a href="{{ route('kategori.create') }}" class="float-start float-lg-end btn btn-info fw-semibold">Tambahkan kategori</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                                     <tr>
                                         <td class="text-bold-500">{{ $category->name }}</td>
                                         <td>
-                                            <a href="{{ route('kategori.edit', $category->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                            <a href="{{ route('kategori.edit', $category->id) }}" class="btn btn-sm btn-info fw-semibold">Edit</a>
                                             <form action="{{ route('kategori.delete', $category->id) }}" method="post" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
@@ -52,7 +52,7 @@
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <span class="btn btn-primary btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
+        <span class="btn btn-info fw-semibold btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
         <strong class="me-auto">New notification</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>

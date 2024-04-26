@@ -28,13 +28,12 @@
                             Keep me logged in
                         </label>
                     </div>
-                    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
+                    <button class="btn btn-info fw-semibold btn-block btn-lg shadow-lg mt-5">Log in</button>
                 </form>
             </div>
         </div>
         <div class="col-lg-7 d-none d-lg-block">
-            <div id="auth-right">
-
+            <div id="auth-right" style="background-image: url({{ asset('assets/static/images/destinasi/SituGunung.jpg') }});">
             </div>
         </div>
     </div>

@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12 d-flex justify-content-end">
-                                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                <button type="submit" class="btn btn-info fw-semibold me-1 mb-1">Submit</button>
                                                 <button type="reset"
                                                     class="btn btn-light-secondary me-1 mb-1">Reset</button>
                                             </div>
@@ -59,7 +59,7 @@
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <span class="btn btn-primary btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
+        <span class="btn btn-info fw-semibold btn-sm" style="margin-right: 4px;"><i class="bi bi-bell"></i></span>
         <strong class="me-auto">New notification</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>

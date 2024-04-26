@@ -17,14 +17,10 @@
         <div class="p-3 mb-4 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
                 <div class="row justify-content-between">
-                    <div class="col-md-9 fs-4">
-                        <h1 class="display-5 fw-bold">Selamat datang di Destinasiku</h1>
-                        <p>Jelajahi Keindahan Alam dan Budaya di Berbagai destinasi wisata bersama waifu mu ^^</p>
-                        <a href="#destinations" class="btn btn-lg btn-primary">Jelajahi sekarang!</a>
-                    </div>
-
-                    <div class="col d-flex flex-column">
-                        <img src="{{ asset('assets/static/images/megumin.png') }}" class="align-self-end" style="height: 200px;" />
+                    <div class="col fs-4">
+                        <h1 class="display-5 fw-bold">Selamat datang di Sukabumi Trip</h1>
+                        <p>Jelajahi Keindahan Alam dan Budaya di Berbagai destinasi wisata Sukabumi</p>
+                        <a href="#destinations" class="btn btn-lg btn-info fw-semibold">Jelajahi sekarang!</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +45,7 @@
                                     <p>
                                         <small class="text-body-success"><span class="badge text-bg-success">{{ $arr->category->name }}</span></small>
                                     </p>
-                                    <a href="{{ route('destinasi.detail', $arr->name) }}" class="btn btn-primary btn-sm">Lihat lebih detail</a>
+                                    <a href="{{ route('destinasi.detail', $arr->name) }}" class="btn btn-info fw-semibold btn-sm">Lihat lebih detail</a>
                                 </div>
                             </div>
                         </div>
