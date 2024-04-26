@@ -19,7 +19,7 @@
                 <div class="row justify-content-between">
                     <div class="col-md-9 fs-4">
                         <h1 class="display-5 fw-bold">Selamat datang di Destinasiku</h1>
-                        <p>Jelajahi Keindahan Alam dan Budaya di Berbagai destinasi wisata bersama waifu mu ^^</p>
+                        <p>Jelajahi Keindahan Alam dan Budaya di Berbagai destinasi wisata Sukabumi bersama waifu mu ^^</p>
                         <a href="#destinations" class="btn btn-lg btn-primary">Jelajahi sekarang!</a>
                     </div>
 
