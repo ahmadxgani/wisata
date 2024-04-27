@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('address');
             $table->string('photo_path');
-            $table->string('description');
+            $table->string('description', 1024);
             $table->foreignId('category_id')->constrained();
             $table->string('link');
             $table->timestamps();
