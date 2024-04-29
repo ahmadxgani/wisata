@@ -38,7 +38,7 @@ class DestinationController extends Controller
             'upload_photo' => 'required|image'
         ]);
      
-        $fileName = time() . '.' . $request->upload_photo->extension();
+        $fileName = "storage/image/" . time() . '.' . $request->upload_photo->extension();
         $request->upload_photo->storeAS('public/image', $fileName);
 
         $dest = new Destination;
@@ -83,6 +83,7 @@ class DestinationController extends Controller
             'address' => 'string',
             'upload_photo' => 'image'
         ]);
+        // TODO: update path
         $destination->update($request->all());
         return redirect()->route('dashboard')->with('status', 'Destination successfuly created');
     }
