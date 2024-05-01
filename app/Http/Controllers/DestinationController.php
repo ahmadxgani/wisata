@@ -40,6 +40,7 @@ class DestinationController extends Controller
      
         $fileName = time() . '.' . $request->upload_photo->extension();
         $request->upload_photo->storeAS('public/image', $fileName);
+        $fileName = "storage/image/" . $fileName;
 
         $dest = new Destination;
         $dest->name = $request->input('name');
@@ -83,7 +84,13 @@ class DestinationController extends Controller
             'address' => 'string',
             'upload_photo' => 'image'
         ]);
-        $destination->update($request->all());
+        $data = $request->all();
+        if ($request->upload_path) {
+            $fileName = time() . '.' . $request->upload_photo->extension();
+            $request->upload_photo->storeAS('public/image', $fileName);
+            $data["photo_path"] = "storage/image/" . $fileName;
+        }
+        $destination->update($data);
         return redirect()->route('dashboard')->with('status', 'Destination successfuly created');
     }
 
