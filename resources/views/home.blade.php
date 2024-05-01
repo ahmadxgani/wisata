@@ -34,7 +34,7 @@
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-content">
-                            <img src="{{asset('storage/image/' . $arr->photo_path) }}" class="card-img-top img-fluid"
+                            <img src="{{asset($arr->photo_path) }}" class="card-img-top img-fluid"
                                 alt="singleminded">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $arr->name }}</h5>
