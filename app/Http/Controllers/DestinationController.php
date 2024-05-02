@@ -79,16 +79,19 @@ class DestinationController extends Controller
     {
         $request->validate([
             'description' => 'string',
-            'name' => 'string||unique:destinations,name,'.$destination->id,
+            'name' => 'string|unique:destinations,name,'.$destination->id,
             'link' => 'string',
             'address' => 'string',
             'upload_photo' => 'image'
         ]);
+        
         $data = $request->all();
-        if ($request->upload_path) {
+
+        if ($request->upload_photo) {
             $fileName = time() . '.' . $request->upload_photo->extension();
             $request->upload_photo->storeAS('public/image', $fileName);
-            $data["photo_path"] = "storage/image/" . $fileName;
+            $fileName = "storage/image/" . $fileName;
+            $data["photo_path"] = $fileName;
         }
         $destination->update($data);
         return redirect()->route('dashboard')->with('status', 'Destination successfuly created');
